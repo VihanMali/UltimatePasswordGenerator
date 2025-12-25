@@ -58,6 +58,13 @@ olleh@dlrow#java$edoC
 **Example:**
 OlLeH@dLrOw#AvAj$EdOc
 
+## Strengths
+- Mid (hello@world!) --> Very Weak (31 secs to crack) 
+- Hard (olleh@dlrow#java$edoC) --> Very Strong (300 Trillion years to crack)
+- Strongest (OlLeH@dLrOw#AvAj$EdOc) --> Very Strong (13000000 Trillion years to crack)
+
+**Remember that these Strengths may change according to the words you have given**
+**All these Passwords' Strengths are checked from - https://www.passwordmonster.com/ **
 ---
 
 ## 🛠 Technologies Used
