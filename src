@@ -1,1 +1,103 @@
+import java.util.Random;
+import java.util.Scanner;
 
+public class UltimatePasswordGenerator {
+
+    static String UpperCaseRandomly(String x) {
+        StringBuilder sb = new StringBuilder(x);
+
+        for (int i = 0; i < sb.length(); i++) {
+            if (i % 2 == 0) {
+                sb.setCharAt(i, Character.toUpperCase(sb.charAt(i)));
+            }
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+
+        String[] uniques = {"!", "@", "#", "$", "%", "^", "&", "*", "~", ">", "<"};
+
+        Random random = new Random();
+
+        int reversalInd = random.nextInt(2);
+
+        int randomIndFirst = random.nextInt(uniques.length);
+        int randomIndSecond = random.nextInt(uniques.length);
+        int randomIndThird = random.nextInt(uniques.length);
+        int randomIndFourth = random.nextInt(uniques.length);
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("What should be the Difficulty of your password:");
+        System.out.println("1. Mid\n2. Hard But rememberable\n3. Strong");
+        System.out.println("(enter the number)");
+        int passwordDifficulty = sc.nextInt();
+
+        if (passwordDifficulty == 1) {
+
+            System.out.println("enter the first word in your password: ");
+            String firstWord = sc.next();
+            System.out.println("enter the Second word in your password: ");
+            String secondWord = sc.next();
+
+            System.out.println("\nYour mid level password is: ");
+            System.out.println(firstWord + uniques[randomIndFirst] +
+                    secondWord + uniques[randomIndSecond]);
+
+        } else if (passwordDifficulty == 2) {
+
+            System.out.println("enter the first word in your password: ");
+            StringBuilder sb1 = new StringBuilder(sc.next());
+            System.out.println("enter the Second word in your password: ");
+            StringBuilder sb2 = new StringBuilder(sc.next());
+            System.out.println("enter the third word in your password: ");
+            String thirdWord = sc.next();
+            System.out.println("enter the fourth word in your password: ");
+            StringBuilder sb4 = new StringBuilder(sc.next());
+
+            System.out.println("\nyour hard but rememberable password is: ");
+            System.out.println(sb1.reverse() + uniques[randomIndFirst] +
+                    sb2.reverse() + uniques[randomIndSecond] +
+                    thirdWord + uniques[randomIndThird] +
+                    sb4.reverse());
+
+        } else if (passwordDifficulty == 3) {
+
+            System.out.println("enter the first word in your password: ");
+            String firstWord = sc.next();
+            StringBuilder sb1 = new StringBuilder(firstWord);
+
+            System.out.println("enter the Second word in your password: ");
+            String secondWord = sc.next();
+            StringBuilder sb2 = new StringBuilder(secondWord);
+
+            System.out.println("enter the third word in your password: ");
+            String thirdWord = sc.next();
+            StringBuilder sb3 = new StringBuilder(thirdWord);
+
+            System.out.println("enter the fourth word in your password: ");
+            String fourthWord = sc.next();
+            StringBuilder sb4 = new StringBuilder(fourthWord);
+
+            System.out.println("your Strong password is: ");
+
+            if (reversalInd == 0) {
+                System.out.println(
+                        UpperCaseRandomly(sb1.reverse().toString()) + uniques[randomIndFirst] +
+                                UpperCaseRandomly(secondWord) + uniques[randomIndSecond] +
+                                UpperCaseRandomly(sb3.reverse().toString()) + uniques[randomIndThird] +
+                                UpperCaseRandomly(fourthWord)
+                );
+            }
+
+            if (reversalInd == 1) {
+                System.out.println(
+                        UpperCaseRandomly(firstWord) + uniques[randomIndFirst] +
+                                UpperCaseRandomly(sb2.reverse().toString()) + uniques[randomIndSecond] +
+                                UpperCaseRandomly(thirdWord) + uniques[randomIndThird] +
+                                UpperCaseRandomly(sb4.reverse().toString())
+                );
+            }
+        }
+    }
+}
