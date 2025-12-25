@@ -79,7 +79,7 @@ OlLeH@dLrOw#AvAj$EdOc
 ## ▶️ How to Run
 
 1. Clone the repository:
-   git clone https://github.com/your-username/UltimatePasswordGenerator.git
+   git clone https://github.com/VihanMali/UltimatePasswordGenerator.git
    
 2.Navigate to the project directory:
 cd UltimatePasswordGenerator
